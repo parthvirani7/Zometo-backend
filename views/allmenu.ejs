@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Item Details</title>
+      
+    <style>@import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        width: 100%;
+        height: 100vh;
+  background: #FFF8F3 ;
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 300px;
+        align-items: center;
+        justify-content: center;
+
+        
+      }
+
+    
+
+
+.box {
+  position: relative;
+  margin: 40px auto;
+  width: 90%; 
+  max-width: 1100px; 
+  background: #fff;
+  border-radius: 2px;
+}
+
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.box::before {
+  top: 92%;
+
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.box::after {
+  top: 92%;
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.box:hover::before,
+.box:hover::after {
+  box-shadow: 0 2px 14px rgba(0,0,0,.9);
+  transition: .3s;
+}
+
+.box:hover::before {
+  left: 5px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0);
+
+}
+
+
+.box:hover::after {
+  right: 5px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0);
+}
+ 
+      .l-card__text{
+
+        flex-direction: column;
+  justify-content: space-between;
+
+    padding: 35px;
+    margin: 35px;
+
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  background:url("/men.jpg");
+  position: relative;
+  margin: 40px auto;
+  background: #f6eee3   ;
+  border-radius: 2px;
+      }
+      .l-card{
+        margin: 50px;
+        
+      }
+      div.maint {
+        font-size: 30px;
+        color: #000000;   
+        font-weight: 700;  
+      
+      }
+      p strongt{
+        color: #000000;
+        padding: 0 10px 0 0;
+        font-size: 22px;
+        font-weight: 600 !important;
+      }
+      
+      .l-card__text p {
+        font-size: 20px;
+        font-family: "Vollkorn", serif;
+        font-weight: 400;
+        color: #000023;
+        text-align: left;
+      }
+      .copied-text{
+        font-size: 16px;
+        color: black;
+        transition: .5s;
+      }
+      .copy-btn{
+        padding: 5px;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    
+  .maint{
+position: relative;    
+  }
+  svg{
+    bottom: -22%;
+    position: absolute;
+    right: 3%;
+    width: 260px;
+    z-index: 9999;
+    opacity: .15;
+  }
+  svg.cp{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    position: relative;
+  
+  }
+  
+      </style>
+
+    <body>
+     
+    <% message?.forEach(element => { %>
+
+      <main class="l-card">
+        <div class="l-card__text box">
+          <!-- <img src="/men.jpg" alt="" width=""> -->
+          
+            <div class="info">
+              <div class="item">
+            <p class="row"><div class="maint"><%= element.itemName %>  
+                
+          </div>  </p>
+            <br>
+            <hr color="#000">
+            <br>
+          </div>
+              <p><strongt >Type:</strongt> "<%= element.type %>"</p>
+              <p><strongt >Category:</strongt> "<%= element.category %>"</p>
+              <p><strongt >Price:</strongt> "$<%= element.price %>"</p>
+              <p><strongt >Description:</strongt> "<%= element.description %>"</p>
+              <p><strongt >Restaurant:</strongt>"<%= element.restaurant.restName %>"</p>
+              <p><strongt >Location:</strongt>"<%= element.restaurant.location %>"</p>
+              <p style="align-items: center;">
+                <strongt>Menu Id:</strongt> "<%= element._id %>" 
+                <button class="copy-btn" data-id="<%= element._id %>">
+                
+                  <svg  class="cp" width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#D9D9D9" d="M232 706h142c22.1 0 40 17.9 40 40v142h250V264H232v442z"/>
+                    <path d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"/>
+                    <path d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"/>
+                  </svg></button>
+                <span class="copied-text" style="opacity:0;">Copied!</span>
+              </p>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"  viewBox="0 0 470 470" xml:space="preserve" width="512" height="512">
+                <g>
+                  <path style="fill:#B1786B;" d="M380,7.5h-30v455h30c16.5,0,30-13.5,30-30v-395C410,21,396.5,7.5,380,7.5z"/>
+                  <path style="fill:#CB9385;" d="M331.733,235L380,37.5c0-16.5-13.5-30-30-30h-45l-70,21.097L165,7.5H90c-16.5,0-30,13.5-30,30v395   c0,16.5,13.5,30,30,30h260c16.5,0,30-13.5,30-30L331.733,235z"/>
+                  <polygon style="fill:#CCECFF;" points="380,37.5 380,432.5 350,432.5 300,235 350,37.5  "/>
+                  <polygon style="fill:#5389A9;" points="305,7.5 305,57.5 225,57.5 275,7.5  "/>
+                  <rect x="165" y="7.5" style="fill:#66C6FE;" width="110" height="50"/>
+                  <polygon style="fill:#FFFFFF;" points="90,37.5 90,432.5 290,432.5 350,432.5 350,37.5  "/>
+                  <path style="fill:#99D9FF;" d="M230,246.005v12c0,16.57-13.43,30-30,30s-30-13.43-30-30v-12h30H230z"/>
+                  <path d="M380,0H90C69.322,0,52.5,16.822,52.5,37.5v395c0,20.678,16.822,37.5,37.5,37.5h290c20.678,0,37.5-16.822,37.5-37.5v-395   C417.5,16.822,400.678,0,380,0z M172.5,45h125v17.5c0,4.136-3.364,7.5-7.5,7.5H180c-4.136,0-7.5-3.364-7.5-7.5V45z M297.5,30h-125   V15h125V30z M402.5,432.5c0,12.407-10.094,22.5-22.5,22.5H90c-12.407,0-22.5-10.093-22.5-22.5v-395C67.5,25.093,77.593,15,90,15   h67.5v47.5c0,12.407,10.093,22.5,22.5,22.5h110c12.406,0,22.5-10.093,22.5-22.5V15H380c12.406,0,22.5,10.093,22.5,22.5V432.5z"/>
+                  <path d="M380,30h-45c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h37.5v380h-275V45H135c4.142,0,7.5-3.358,7.5-7.5   S139.143,30,135,30H90c-4.142,0-7.5,3.358-7.5,7.5v395c0,4.142,3.358,7.5,7.5,7.5h290c4.143,0,7.5-3.358,7.5-7.5v-395   C387.5,33.358,384.143,30,380,30z"/>
+                  <path d="M192.5,294.75v77.245c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5V294.75c17.096-3.484,30-18.635,30-36.745v-60   c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v40.5h-15v-40.5c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v40.5h-15v-40.5   c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v60C162.5,276.115,175.404,291.266,192.5,294.75z M222.5,253.505v4.5   c0,12.407-10.093,22.5-22.5,22.5s-22.5-10.093-22.5-22.5v-4.5H222.5z"/>
+                  <path d="M300,379.495c4.143,0,7.5-3.358,7.5-7.5v-153.99c0-15.164-12.337-27.5-27.5-27.5s-27.5,12.336-27.5,27.5v77   c0,15.164,12.337,27.5,27.5,27.5h12.5v49.49C292.5,376.137,295.857,379.495,300,379.495z M280,307.505   c-6.893,0-12.5-5.607-12.5-12.5v-77c0-6.893,5.607-12.5,12.5-12.5s12.5,5.607,12.5,12.5v89.5H280z"/>
+                  <path d="M170.002,165.505c1.819,0,3.643-0.658,5.084-1.988l16.585-15.305l16.577,15.304c2.873,2.652,7.3,2.652,10.174,0.001   l16.585-15.305l16.577,15.304c2.874,2.651,7.302,2.652,10.176,0l16.576-15.303l16.575,15.303c3.043,2.81,7.788,2.62,10.599-0.423   c2.81-3.043,2.62-7.788-0.423-10.598l-21.663-20c-2.875-2.652-7.303-2.653-10.176,0l-16.576,15.303l-16.576-15.303   c-2.872-2.651-7.3-2.652-10.174-0.001l-16.585,15.305l-16.577-15.304c-2.872-2.651-7.3-2.652-10.174-0.001l-21.673,20   c-3.044,2.809-3.234,7.554-0.425,10.598C165.967,164.693,167.981,165.505,170.002,165.505z"/>
+                </g>
+                </svg>  
+            </div>
+          
+        </div>
+      
+      </main>
+      
+        <!-- Script to handle copying the Menu Id -->
+        <script>
+          document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+              const id = button.getAttribute('data-id');
+              copyToClipboard(id, button);
+            });
+          });
+      
+          function copyToClipboard(text, button) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            
+            const copiedText = button.parentNode.querySelector('.copied-text');
+            copiedText.style.opacity = '1';
+
+            setTimeout(() => {
+              copiedText.style.opacity = '0';
+            }, 2000);
+          }
+        </script>
+      </body>
+      <% }) %>
+      
+  
+ 
+
+
+</html>

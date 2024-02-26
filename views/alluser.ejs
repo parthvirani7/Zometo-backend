@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+      
+    <style>@import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        width: 100%;
+        height: 100vh;
+  background: #EFECEC;
+
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 300px;
+        align-items: center;
+        justify-content: center;
+
+        
+      }
+
+    
+
+
+.box {
+  position: relative;
+  margin: 40px auto;
+  width: 90%; 
+  max-width: 1000px; 
+  background: #fff;
+  border-radius: 2px;
+}
+
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.box::before {
+  top: 90%;
+
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.box::after {
+  top: 90%;
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.box:hover::before,
+.box:hover::after {
+  box-shadow: 0 2px 14px rgba(0,0,0,.4);
+}
+
+.box:hover::before {
+  left: 5px;
+}
+
+.box:hover::after {
+  right: 5px;
+}
+ 
+      .l-card__text{
+
+        flex-direction: column;
+  justify-content: space-between;
+
+    padding: 35px;
+    margin: 35px;
+
+  border: 5px solid rgba(255, 255, 255, 0.66);
+  border-radius: 20px;
+  background:url("/men.jpg");
+  position: relative;
+  margin: 40px auto;
+  background: #d9dbd6 ;
+  border-radius: 2px;
+      }
+      .l-card{
+        margin: 50px;
+      }
+      div.maint {
+        font-size: 30px;
+        color: #301f1a;   
+        font-weight: 700;  
+      
+      }
+      p strongt{
+        color: #000;
+        padding: 0 10px 0 0;
+        font-size: 22px;
+        font-weight: 600 !important;
+      }
+      
+      .l-card__text p {
+        font-size: 20px;
+        font-family: "Vollkorn", serif;
+        font-weight: 400;
+        color: #000;
+        text-align: left;
+      }
+      .copied-text{
+        font-size: 16px;
+        color: black;
+        transition: .5s;
+      }
+      .copy-btn{
+        padding-bottom: 0px;
+        margin-bottom: -5px;
+        align-items: center;
+        background: transparent;
+        border: none;
+cursor: pointer;
+top: 10%;
+margin-left: 7px;
+margin-top: 10px;
+      }
+    
+  
+      svg{
+        bottom: -70%;
+    position: absolute;
+    right: 5%;
+    opacity: .1;
+    width: 260px;
+
+  }
+
+  svg.cp{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    position: relative;
+  }
+  .nine h1 {
+  text-align:center; font-size:50px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family:"Playfair Display", serif; font-weight:400;
+}
+.nine h1 span {
+  margin-top: 5px;
+    font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+    text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.nine h1 span:after,.nine h1 span:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+  background-color:#f8f8f8;
+}
+
+
+.ten h1 {
+  font-size:34px; font-weight:500; text-transform:uppercase;
+}
+.ten h1:before {
+    background-color: #c50000;
+    border-radius: 0.25rem;
+    content: '';
+    display: block;
+    height: 0.25rem;
+    width: 42px;
+    margin-bottom: 1.25rem;
+}
+
+
+.eleven h1 {
+  font-size:30px;text-align:center; line-height:1.5em; padding-bottom:45px; font-family:"Playfair Display", serif; text-transform:uppercase;letter-spacing: 2px; color:#111;
+}
+
+
+.eleven h1:before {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 60%;
+  left:50%; margin-left:-30%;
+  height: 1px;
+  content: "";
+  background-color: #777; z-index: 4;
+}
+.eleven h1:after {
+  position:absolute;
+  width:40px; height:40px; left:50%; margin-left:-20px; bottom:0px;
+  content: '\00a7'; font-size:30px; line-height:40px; color:#c50000;
+  font-weight:400; z-index: 5;
+  display:block;
+  background-color:#f8f8f8;
+}
+
+
+.twelve h1 {
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve h1:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve h1:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+
+
+
+.thirteen h1 {
+  position:relative; font-size:20px; font-weight:700;  letter-spacing:0px; text-transform:uppercase; width:150px; text-align:center; margin:auto; white-space:nowrap; border:2px solid #222;padding:5px 11px 3px 11px;
+}
+.thirteen h1:before, .thirteen h1:after {
+    background-color: #c50000;
+    position:absolute; 
+    content: '';
+    height: 7px;
+
+    width: 7px; border-radius:50%;
+    bottom: 12px;
+}
+.thirteen h1:before {
+   left:-20px;
+}
+.thirteen h1:after {
+   right:-20px;
+}
+
+
+      </style>
+
+    <body>
+      <div class="nine">
+      <br>
+      <br>
+        <h1>User Detail<span>all registered users</span></h1>
+      </div>
+      <% message?.forEach(element => { %>
+
+      <main class="l-card">
+        <div class="l-card__text box">
+          <!-- <img src="/men.jpg" alt="" width=""> -->
+          
+            <div class="info">
+              <div class="item">
+            <p><div class="maint"><%= element.firstName %>
+              <svg width="800px" height="800px" viewBox="0 0 61.7998 61.7998" xmlns="http://www.w3.org/2000/svg">
+
+                <title/>
+                
+                <g data-name="Layer 2" id="Layer_2">
+                
+                <g data-name="—ÎÓÈ 1" id="_ÎÓÈ_1">
+                
+                <circle cx="30.8999" cy="30.8999" fill="#485a69" r="30.8999"/>
+                
+                <path d="M23.242 38.592l15.92.209v12.918l-15.907-.121-.013-13.006z" fill="#f9dca4" fill-rule="evenodd"/>
+                
+                <path d="M53.478 51.993A30.814 30.814 0 0 1 30.9 61.8a31.225 31.225 0 0 1-3.837-.237A30.699 30.699 0 0 1 15.9 57.919a31.033 31.033 0 0 1-7.857-6.225l1.284-3.1 13.925-6.212c0 4.535 1.84 6.152 7.97 6.244 7.57.113 7.94-1.606 7.94-6.28l12.79 6.281z" fill="#d5e1ed" fill-rule="evenodd"/>
+                
+                <path d="M39.165 38.778v3.404c-2.75 4.914-14 4.998-15.923-3.59z" fill-rule="evenodd" opacity="0.11"/>
+                
+                <path d="M31.129 8.432c21.281 0 12.987 35.266 0 35.266-12.267 0-21.281-35.266 0-35.266z" fill="#ffe8be" fill-rule="evenodd"/>
+                
+                <path d="M18.365 24.045c-3.07 1.34-.46 7.687 1.472 7.658a31.973 31.973 0 0 1-1.472-7.658z" fill="#f9dca4" fill-rule="evenodd"/>
+                
+                <path d="M44.14 24.045c3.07 1.339.46 7.687-1.471 7.658a31.992 31.992 0 0 0 1.471-7.658z" fill="#f9dca4" fill-rule="evenodd"/>
+                
+                <path d="M43.409 29.584s1.066-8.716-2.015-11.752c-1.34 3.528-7.502 4.733-7.502 4.733a16.62 16.62 0 0 0 3.215-2.947c-1.652.715-6.876 2.858-11.61 1.161a23.715 23.715 0 0 0 3.617-2.679s-4.287 2.322-8.44 1.742c-2.991 2.232-1.66 9.162-1.66 9.162C15 18.417 18.697 6.296 31.39 6.226c12.358-.069 16.17 11.847 12.018 23.358z" fill="#ecbe6a" fill-rule="evenodd"/>
+                
+                <path d="M23.255 42.179a17.39 17.39 0 0 0 7.958 6.446l-5.182 5.349L19.44 43.87z" fill="#ffffff" fill-rule="evenodd"/>
+                
+                <path d="M39.16 42.179a17.391 17.391 0 0 1-7.958 6.446l5.181 5.349 6.592-10.103z" fill="#ffffff" fill-rule="evenodd"/>
+                
+                <path d="M33.366 61.7q-1.239.097-2.504.098-.954 0-1.895-.056l1.031-8.757h2.41z" fill="#3dbc93" fill-rule="evenodd"/>
+                
+                <path d="M28.472 51.456l2.737-2.817 2.736 2.817-2.736 2.817-2.737-2.817z" fill="#3dbc93" fill-rule="evenodd"/>
+                
+                </g>
+                
+                </g>
+                
+                </svg>
+            </div></p>
+            <br>
+            <hr color="#000">
+            <br>
+              <p><strongt >First Name:</strongt> "<%= element.firstName %>"</p>
+            </div>
+              <p><strongt >Last Name:</strongt> "<%= element.lastName %>"</p>
+              <p><strongt >Location:</strongt> "<%= element.location %>"</p>
+              <p><strongt >Contact Number:</strongt> <%= element.contactNumber %>"</p>
+              <p><strongt >Email Id:</strongt> "<%= element.email %>"</p>
+              <p style="align-items: center;">
+                <strongt>User Id:</strongt> "<%= element._id %>" 
+                <button class="copy-btn" data-id="<%= element._id %>">
+                  <svg class="cp" width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.9983 10C20.9862 7.82497 20.8897 6.64706 20.1213 5.87868C19.2426 5 17.8284 5 15 5H12C9.17157 5 7.75736 5 6.87868 5.87868C6 6.75736 6 8.17157 6 11V16C6 18.8284 6 20.2426 6.87868 21.1213C7.75736 22 9.17157 22 12 22H15C17.8284 22 19.2426 22 20.1213 21.1213C21 20.2426 21 18.8284 21 16V15" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M3 10V16C3 17.6569 4.34315 19 6 19M18 5C18 3.34315 16.6569 2 15 2H11C7.22876 2 5.34315 2 4.17157 3.17157C3.51839 3.82475 3.22937 4.69989 3.10149 6" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg></button>
+                <span class="copied-text" style="opacity:0;">Copied!</span>
+              </p>
+            </div>
+          
+        </div>
+      
+      </main>
+      
+        <!-- Script to handle copying the Menu Id -->
+        <script>
+          document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+              const id = button.getAttribute('data-id');
+              copyToClipboard(id, button);
+            });
+          });
+      
+          function copyToClipboard(text, button) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            
+            const copiedText = button.parentNode.querySelector('.copied-text');
+            copiedText.style.opacity = '1';
+
+            setTimeout(() => {
+              copiedText.style.opacity = '0';
+            }, 2000);
+          }
+        </script>
+      </body>
+      <% }) %>
+      
+  
+ 
+
+
+</html>
